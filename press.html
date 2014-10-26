@@ -1,0 +1,22 @@
+---
+layout: page
+title: Press Coverage
+permalink: /press/
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+
+      <h1>{{ post.title }}</h1>
+
+      <div class="entry">
+        <a href="{{ post.link }}">
+          <img src="{{ post.img }}">
+        </a>
+        {{ post.content }}
+      </div>
+
+    </article>
+  {% endfor %}
+</div>
