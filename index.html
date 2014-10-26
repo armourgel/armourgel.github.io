@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Armourgel</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
+---
+layout: default
+---
 
-<body>
-The content of the document......
-</body>
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
 
-</html>
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.content | truncatewords:40}}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
