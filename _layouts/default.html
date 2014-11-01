@@ -22,7 +22,7 @@
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
-  <body>
+  <body class="{{ page.class }}">
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -34,12 +34,24 @@
           </div>
           <nav>
             <ol>
-              <li><a href="{{ site.baseurl }}/technology">Our Technology</a></li>
-              <li><a href="{{ site.baseurl }}/sporting_apparel">Sporting Apparel</a></li>
-              <li><a href="{{ site.baseurl }}/medical">Medical Hip Protectors</a></li>
-              <li><a href="{{ site.baseurl }}/ballistic">Ballistic Protection</a></li>
-              <li><a href="{{ site.baseurl }}/press">Press</a></li>
-              <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+              <li class="technology">
+                <a href="{{ site.baseurl }}/technology">Our Technology</a>
+              </li>
+              <li class="sporting">
+                <a href="{{ site.baseurl }}/sporting_apparel">Sporting Apparel</a>
+              </li>
+              <li class="medical">
+                <a href="{{ site.baseurl }}/medical">Medical Hip Protectors</a>
+              </li>
+              <li class="ballistic">
+                <a href="{{ site.baseurl }}/ballistic">Ballistic Protection</a>
+              </li>
+              <li class="press">
+                <a href="{{ site.baseurl }}/press">Press</a>
+              </li>
+              <li class="contact">
+                <a href="{{ site.baseurl }}/contact">Contact</a>
+              </li>
             </ol>
           </nav>
         </header>

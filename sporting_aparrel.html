@@ -1,0 +1,22 @@
+---
+layout: page
+class: sporting
+permalink: /sporting_apparel/
+sections_number: 2
+---
+
+<div class="posts">
+<div class="posts-container number-{{ page.sections_number }}">
+  {% for post in site.posts %}
+    {% if post.category == 'sporting' %}
+
+      <article class="post press-clipping">
+
+        {{ post.content }}
+
+      </article>
+
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>

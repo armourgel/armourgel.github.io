@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ballistic Protection
+class: ballistic
 permalink: /ballistic/
 ---
 

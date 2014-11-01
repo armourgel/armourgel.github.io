@@ -78,23 +78,18 @@ a {
 nav a:hover:after,
 nav a:active:after {
   content: "";
-    border-bottom: 1px solid $armour-black;
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-  }
-
-ul, ol {
-  list-style-type: none;
+  border-bottom: 1px solid $armour-black;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
 }
+
+
 
 ol ul, ul ol, ul ul, ol ol {
   margin: 0;
-}
-
-ul ul, ol ul {
-  list-style-type: circle;
+  list-style-type: none;
 }
 
 em, i {
@@ -247,6 +242,25 @@ img {
   margin-left: 6px;
 }
 
+.sporting li.sporting a,
+.technology li.technology a,
+.medical li.medical a,
+.ballistic li.ballistic a,
+.contact li.contact a,
+.press li.press a {
+  color: $armour-red;
+  cursor: default;
+}
+
+.sporting li.sporting a:after,
+.technology li.technology a:after,
+.medical li.medical a:after,
+.ballistic li.ballistic a:after,
+.contact li.contact a:after,
+.press li.press a:after {
+  border: none;
+}
+
 nav {
   float: right;
   margin: 34px 24px 0 0; // @TODO: Vertically middle align
@@ -297,11 +311,25 @@ nav {
 
 #main {
   margin-top: 2*$gutter;
+  @include sections;
 }
 
-.posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+.posts {
+  float: right;
+  overflow: hidden;
+  width: 50%;
+  height: 500px;
+  position: relative;
+}
+
+.posts-container {
+  position: relative;
+}
+
+.posts .post {
+  display: inline;
+  position: relative;
+  display: block;
 }
 
 .posts > .post:last-child {
@@ -332,6 +360,7 @@ nav {
 // press clippings
 
 .press-clipping {
+  width: 50%;
   a{
     display: inline;
     width: 20%;
@@ -354,6 +383,7 @@ nav {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
+  clear: both;
 }
 
 footer {

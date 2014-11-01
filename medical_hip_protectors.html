@@ -1,20 +1,23 @@
 ---
 layout: page
-title: Medical Hip Protectors
+class: medical
 permalink: /medical/
+sections_number: 2
 ---
 
 <div class="posts">
+  <div class="posts-container number-{{ page.sections_number }}">
 
   {% for post in site.posts %}
     {% if post.category == 'protectors' %}
 
-      <article class="post press-clipping">
+      <section class="post press-clipping">
 
         {{ post.content }}
 
-      </article>
+      </section>
 
     {% endif %}
   {% endfor %}
+  </div>
 </div>
