@@ -33,13 +33,14 @@
             </a>
           </div>
           <nav>
-            <a href=Armourgel"{{ site.baseurl }}/medical">Medical Hip Protectors</a>
-            <a href="{{ site.baseurl }}/technology">Our Technology</a>
-            <a href="{{ site.baseurl }}/ballistic">Ballistic Protection</a>
-            <!-- <a href="{{ site.baseurl }}/partners">Our Partners</a> -->
-            <a href="{{ site.baseurl }}/press">Press</a>
-            <!-- <a href="{{ site.baseurl }}/about">About</a> -->
-            <a href="{{ site.baseurl }}/contact">Contact</a>
+            <ol>
+              <li><a href="{{ site.baseurl }}/technology">Our Technology</a></li>
+              <li><a href="{{ site.baseurl }}/sporting_apparel">Sporting Apparel</a></li>
+              <li><a href="{{ site.baseurl }}/medical">Medical Hip Protectors</a></li>
+              <li><a href="{{ site.baseurl }}/ballistic">Ballistic Protection</a></li>
+              <li><a href="{{ site.baseurl }}/press">Press</a></li>
+              <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+            </ol>
           </nav>
         </header>
       </div>
@@ -49,13 +50,22 @@
       {{ content }}
     </div>
 
-    <!-- <div class="wrapper-footer">
+    <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
-          {% include svg-icons.html %}
+          <nav>
+            <ol>
+              <li><a href="{{ site.baseurl }}/technology">Our Technology</a></li>
+              <li><a href="{{ site.baseurl }}/sporting_apparel">Sporting Apparel</a></li>
+              <li><a href="{{ site.baseurl }}/medical">Medical Hip Protectors</a></li>
+              <li><a href="{{ site.baseurl }}/ballistic">Ballistic Protection</a></li>
+              <li><a href="{{ site.baseurl }}/press">Press</a></li>
+              <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+            </ol>
+          </nav>
         </footer>
       </div>
-    </div> -->
+    </div>
 
     {% include analytics.html %}
   </body>

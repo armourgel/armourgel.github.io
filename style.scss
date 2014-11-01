@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
+  font-family: $title-font-family;
 
   @include mobile {
     line-height: 1.4;
@@ -45,7 +46,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: $base-font-size*2;
-  font-family: $title-font-family;
   a {
     color: inherit;
   }
@@ -66,28 +66,27 @@ h4 {
 
 p {
   margin: 15px 0;
+  line-height: 1.5;
 }
 
 a {
-  color: $blue;
   text-decoration: none;
 	cursor: pointer;
-  &:hover, &:active {
-    color: $armour-blue;
-  }
+  position: relative;
 }
+
+nav a:hover:after,
+nav a:active:after {
+  content: "";
+    border-bottom: 1px solid $armour-black;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+  }
 
 ul, ol {
-  margin: 15px 0;
-  padding-left: 30px;
-}
-
-ul {
-  list-style-type: disc;
-}
-
-ol {
-  list-style-type: decimal;
+  list-style-type: none;
 }
 
 ol ul, ul ol, ul ul, ol ol {
@@ -184,7 +183,7 @@ img {
   }
 
   nav {
-    width: 540px;
+    width: 696px;
     text-align: center;
     float: none;
     margin: 0;
@@ -197,7 +196,7 @@ img {
     line-height: 1.7;
   }
 
-  nav a:nth-of-type(4) {
+  nav a:nth-of-type(5) {
     border: none;
   }
 }
@@ -250,7 +249,7 @@ img {
 
 nav {
   float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  margin: 34px 24px 0 0; // @TODO: Vertically middle align
   font-family: $base-font-family;
   font-size: 18px;
   font-weight: bold;
@@ -262,14 +261,18 @@ nav {
     font-size: 16px;
   }
 
-  a {
-    margin-left: 10px;
+  li {
+    margin-left: 5px;
     padding-left: 10px;
+    display: inline;
+    border-left: 1px solid $darkGray;
+  }
+
+  a {
     color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
-    border-left: 2px solid $darkGray;
     text-transform: uppercase;
     font-size: $base-font-size*0.7;
 
@@ -279,11 +282,11 @@ nav {
     }
   }
 
-  a:nth-of-type(1) {
+  li:nth-of-type(1) {
     border: none;
   }
 
-  a.selected {
+  li.selected {
     color: red;
   }
 }
@@ -291,6 +294,10 @@ nav {
 //
 // .main
 //
+
+#main {
+  margin-top: 2*$gutter;
+}
 
 .posts > .post {
   padding-bottom: 2em;
@@ -352,6 +359,19 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+}
+
+.wrapper-footer nav {
+  margin: 0;
+  float: none;
+
+  li {
+    border-color: $armour-blue;
+  }
+
+  a {
+    color: $armour-blue;
+  }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

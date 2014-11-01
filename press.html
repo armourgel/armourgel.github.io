@@ -6,10 +6,10 @@ permalink: /press/
 
 <div class="posts">
   {% for post in site.posts %}
-
+    {% if post.category == 'press' %}
     <article class="post press-clipping">
 
-      <h1>{{ post.title }}</h1>
+      <h6>{{ post.title }}</h6>
 
       <div class="entry">
         <a href="{{ post.link }}">
@@ -19,6 +19,6 @@ permalink: /press/
       </div>
 
     </article>
-
+    {% endif %}
   {% endfor %}
 </div>

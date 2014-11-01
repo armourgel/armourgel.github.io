@@ -1,0 +1,19 @@
+---
+layout: page
+title: About Armourgel
+permalink: /technology/
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    {% if post.category == 'technology' %}
+
+      <article class="post press-clipping">
+
+        {{ post.content }}
+
+      </article>
+
+    {% endif %}
+  {% endfor %}
+</div>

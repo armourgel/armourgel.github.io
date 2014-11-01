@@ -1,0 +1,20 @@
+---
+layout: page
+title: Medical Hip Protectors
+permalink: /medical/
+---
+
+<div class="posts">
+
+  {% for post in site.posts %}
+    {% if post.category == 'protectors' %}
+
+      <article class="post press-clipping">
+
+        {{ post.content }}
+
+      </article>
+
+    {% endif %}
+  {% endfor %}
+</div>

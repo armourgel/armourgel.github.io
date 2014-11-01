@@ -1,13 +1,14 @@
 ---
 ---
 
-nav = $('nav')
+
 
 init = () ->
+  body = document.body
   debugger
-  nav.on 'click', 'a', navClick
+  body.on 'click', 'nav > a', navClick
 
 navClick = () ->
   debugger
 
-init()
+document.on('load',init())
