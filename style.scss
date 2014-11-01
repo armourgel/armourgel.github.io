@@ -19,22 +19,21 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
   color: $darkGray;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
+  max-width: $site-max-width;
   padding: 0 10px;
   width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
   color: $darkerGray;
   font-weight: bold;
-
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
@@ -45,22 +44,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: $base-font-size*2;
+  font-family: $title-font-family;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 24px;
+  font-size: $base-font-size*1.5;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: $base-font-size*1.2
 }
 
 h4 {
-  font-size: 18px;
+  font-weight: bold;
   color: $gray;
 }
 
@@ -73,7 +73,7 @@ a {
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: $armour-blue;
   }
 }
 
@@ -142,16 +142,72 @@ img {
 /*********************/
 
 //
+// .home-container
+//
+
+.home-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  object {
+    width: 100%;
+  }
+
+  svg {
+    opacity: .5;
+    width: 50%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  path {
+    fill: $armour-red;
+  }
+
+  .site-name {
+    position: absolute;
+    top: 50%;
+    font-size: 2.5*$base-font-size;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    margin: -70px 0 0 0;
+  }
+
+  nav {
+    width: 540px;
+    text-align: center;
+    float: none;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    line-height: 1.7;
+  }
+
+  nav a:nth-of-type(4) {
+    border: none;
+  }
+}
+
+//
 // .masthead
 //
 
-.wrapper-masthead {
-  margin-bottom: 50px;
-}
-
 .masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  padding-top: 20px;
 
   @include mobile {
     text-align: center;
@@ -169,47 +225,35 @@ img {
     display: block;
     margin: 0 auto;
   }
-
-  img {
-    border-radius: 5px;
-  }
 }
 
-.site-info {
-  float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
+.site-avatar svg {
+  width: auto;
+  height: 70px;
+  path {
+    fill: $armour-red;
   }
 }
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: $armour-grey;
   cursor: pointer;
-  font-family: $helveticaNeue; 
-  font-weight: 300;
-  font-size: 28px;
-  letter-spacing: 1px;
-}
-
-.site-description {
-  margin: -5px 0 0 0;
-  color: $gray;
+  font-family: $title-font-family;
+  font-weight: 600;
   font-size: 16px;
-
-  @include mobile {
-    margin: 3px 0;
-  }
+  letter-spacing: 0px;
+  margin-top: -8px;
+  text-transform: uppercase;
+  margin-left: 6px;
 }
 
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
+  font-family: $base-font-family;
   font-size: 18px;
+  font-weight: bold;
 
   @include mobile {
     float: none;
@@ -219,16 +263,28 @@ nav {
   }
 
   a {
-    margin-left: 20px;
+    margin-left: 10px;
+    padding-left: 10px;
     color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
+    border-left: 2px solid $darkGray;
+    text-transform: uppercase;
+    font-size: $base-font-size*0.7;
 
     @include mobile {
       margin: 0 10px;
       color: $blue;
     }
+  }
+
+  a:nth-of-type(1) {
+    border: none;
+  }
+
+  a.selected {
+    color: red;
   }
 }
 
